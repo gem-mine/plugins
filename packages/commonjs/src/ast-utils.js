@@ -86,10 +86,7 @@ function getDefinePropertyCallName(node, targetName) {
   }
 
   if (targetNames.length === 2) {
-    if (
-      target.type !== 'MemberExpression' ||
-      target.property.name !== targetNames[1]
-    ) {
+    if (target.type !== 'MemberExpression' || target.property.name !== targetNames[1]) {
       return;
     }
   }
