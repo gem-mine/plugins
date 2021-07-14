@@ -55,7 +55,8 @@ export default function transformCommonjs(
   disableWrap,
   commonDir,
   astCache,
-  defaultIsModuleExports
+  defaultIsModuleExports,
+  disableTypeOfFilter
 ) {
   const ast = astCache || tryParse(parse, code, id);
   const magicString = new MagicString(code);
@@ -401,6 +402,9 @@ export default function transformCommonjs(
               flattened.keypath === 'module' ||
               flattened.keypath === 'exports'
             ) {
+              if (disableTypeOfFilter(id)) {
+                return;
+              }
               magicString.overwrite(node.start, node.end, `'object'`, {
                 storeName: false
               });

@@ -24,7 +24,6 @@
     "ci:lint": "pnpm run build && pnpm run lint",
     "ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
     "ci:test": "pnpm run test -- --verbose && pnpm run test:ts",
-    "prebuild": "del-cli dist",
     "prepare": "pnpm run build",
     "pretest": "pnpm run build",
     "test": "ava",
