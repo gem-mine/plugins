@@ -80,7 +80,7 @@ function getDefinePropertyCallName(node, targetName) {
   const targetNames = targetName.split('.');
   const [target, key, value] = node.arguments;
   if (targetNames.length === 1) {
-    if (target.type !== 'Identifier' || target.name !== targetNames[0]) {
+    if (target.type !== 'Identifier') {
       return;
     }
   }
@@ -88,7 +88,6 @@ function getDefinePropertyCallName(node, targetName) {
   if (targetNames.length === 2) {
     if (
       target.type !== 'MemberExpression' ||
-      target.object.name !== targetNames[0] ||
       target.property.name !== targetNames[1]
     ) {
       return;
