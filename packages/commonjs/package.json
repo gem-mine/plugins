@@ -1,6 +1,6 @@
 {
   "name": "@gem-mine/rollup-plugin-commonjs",
-  "version": "19.1.1",
+  "version": "19.1.2",
   "publishConfig": {
     "access": "public"
   },
