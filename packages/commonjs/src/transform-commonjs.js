@@ -402,7 +402,7 @@ export default function transformCommonjs(
               flattened.keypath === 'module' ||
               flattened.keypath === 'exports'
             ) {
-              if (disableTypeOfFilter(id)) {
+              if (!disableTypeOfFilter(id)) {
                 return;
               }
               magicString.overwrite(node.start, node.end, `'object'`, {
