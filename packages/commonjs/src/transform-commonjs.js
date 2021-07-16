@@ -406,12 +406,11 @@ export default function transformCommonjs(
               flattened.keypath === 'module' ||
               flattened.keypath === 'exports'
             ) {
-              if (!disableTypeOfFilter(id)) {
-                return;
+              if (disableTypeOfFilter(id)) {
+                magicString.overwrite(node.start, node.end, `'object'`, {
+                  storeName: false
+                });
               }
-              magicString.overwrite(node.start, node.end, `'object'`, {
-                storeName: false
-              });
             }
           }
           return;

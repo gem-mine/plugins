@@ -43,7 +43,7 @@ import { getName, getVirtualPathForDynamicRequirePath, normalizePathSlashes } fr
 export default function commonjs(options = {}) {
   const extensions = options.extensions || ['.js'];
   const filter = createFilter(options.include, options.exclude);
-  const disableTypeOfFilter = createFilter(options.disableRewriteTypeof);
+  const disableTypeOfFilter = createFilter(null, options.disableRewriteTypeof);
   const {
     ignoreGlobal,
     ignoreDynamicRequires,

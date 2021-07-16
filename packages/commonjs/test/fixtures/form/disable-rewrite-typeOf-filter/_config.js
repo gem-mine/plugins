@@ -1,5 +1,5 @@
 module.exports = {
   options: {
-    disableRewriteTypeof: ['disable-rewrite-typeOf/**/*']
+    disableRewriteTypeof: [/disable-rewrite-typeOf/]
   }
 };
